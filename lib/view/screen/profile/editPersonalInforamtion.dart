@@ -131,36 +131,36 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
                 //============================> Name List Tile <=================
                 CustomTextField(
                   controller: nameCTRl,
-                  hintText: AppStrings.enterName.tr,
-                  prefixIcon: SvgPicture.asset(AppIcons.gmail,color: AppColors.borderColor,height: 20.h,width: 20.w),
+                  hintText: 'Enter Name',
+                  prefixIcon: SvgPicture.asset(AppIcons.profileIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
                 ),
                 SizedBox(height: 16.h),
                 //============================> Chat History List Tile <=================
                 CustomTextField(
                   controller: emailCTRl,
-                  hintText:  AppStrings.enterEmail.tr,
-                  prefixIcon: SvgPicture.asset(AppIcons.eyeOffIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
+                  hintText:  'Enter Email',
+                  prefixIcon: SvgPicture.asset(AppIcons.gmail,color: AppColors.borderColor,height: 20.h,width: 20.w),
                 ),
                 SizedBox(height: 16.h),
 
                 //============================> Settings List Tile <=================
                 CustomTextField(
                   controller: phoneCTRl,
-                  hintText: AppStrings.enterPhone.tr,
+                  hintText: 'Enter Phone Number',
                   prefixIcon: SvgPicture.asset(AppIcons.eyeOffIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
                 ),
                 SizedBox(height: 16.h),
                 //============================> BirthDay List Tile <=================
                 CustomTextField(
                   controller: birthdayCTRl,
-                  hintText: AppStrings.enterBirthday.tr,
+                  hintText: 'Enter Birthday',
                   prefixIcon: SvgPicture.asset(AppIcons.eyeOffIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
                 ),
                 SizedBox(height: 16.h),
                 //============================> Address List Tile <=================
                 CustomTextField(
                   controller: addressCTRl,
-                  hintText: AppStrings.enterAddress.tr,
+                  hintText: 'Enter Address',
                   prefixIcon: SvgPicture.asset(AppIcons.eyeOffIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
                 ),
 
@@ -171,7 +171,7 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
                     onTap: () {
                     //  Get.toNamed(AppRoutes.greatFullScreen);
                     },
-                    text: AppStrings.updateText.tr,
+                    text: 'Update',
                   ),
                 ),
               ]
@@ -207,7 +207,7 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
                               size: 50.w,
                               color: AppColors.primaryColor,
                             ),
-                            CustomText(text: AppStrings.galleryText.tr)
+                            CustomText(text: 'Gallery')
                           ],
                         ),
                       ),
@@ -223,7 +223,7 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
                           children: [
                             Icon(Icons.camera_alt,
                                 size: 50.w, color: AppColors.primaryColor),
-                            CustomText(text:  AppStrings.cameraText.tr)
+                            CustomText(text: 'Camera')
                           ],
                         ),
                       ),

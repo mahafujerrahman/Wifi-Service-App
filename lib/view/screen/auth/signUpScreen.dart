@@ -102,7 +102,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("${AppStrings.alreadyHaveAccount.tr}"),
+                  Text("Already have an account?"),
                   TextButton(
                       onPressed: () {
                         Get.toNamed(AppRoutes.signInScreen);

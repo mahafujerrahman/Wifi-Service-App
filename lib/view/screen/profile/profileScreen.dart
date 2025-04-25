@@ -37,75 +37,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding:  EdgeInsets.all(16.r),
           child: Column(
             children: [
-              Center(
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    // Profile picture
-                    _image != null
-                        ? Padding(
-                      padding: EdgeInsets.all(8.0.r),
-                      child: Container(
-                          width: 150.w,
-                          height: 150.h,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(width: 1.w, color: AppColors.white),
-                              image: DecorationImage(
-                                  image: MemoryImage(_image!),
-                                  fit: BoxFit.cover))),
-                    )
-                        : Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 150.w,
-                        height: 150.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(30.r)),
-                        ),
-                        child: ClipOval(
-                          child: Image.network(
-                            'http://www.clker.com/cliparts/Z/J/g/U/V/b/avatar-male-silhouette-md.png',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 10,
-                      right: 10,
-                      child: GestureDetector(
-                        onTap: () {
-                          showImagePickerOption(context);
-                        },
-                        child: Container(
-                          width: 40.w,
-                          height: 40.h,
-                          decoration: BoxDecoration(
-                            color: AppColors.primaryColor,
-                            borderRadius: BorderRadius.all(Radius.circular(25.r)),
-                          ),
-                          child: Icon(
-                            Icons.camera_alt_outlined,
-                            size: 25,
-                            color: AppColors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               SizedBox(height: 8.h),
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('Mahafujer', style: AppStyles.fontSize20(fontWeight: FontWeight.w900)),
-                  Text('Age : 25', style: AppStyles.fontSize16(color: AppColors.subTextColor)),
+                  Text('Mahafujer Rahman', style: AppStyles.fontSize20(fontWeight: FontWeight.w900)),
+                  Text('Status : Disconnected', style: AppStyles.fontSize16(color: AppColors.subTextColor)),
                   Text('Account type : Free', style: AppStyles.fontSize16(color: AppColors.subTextColor)),
                 ],
               ),
@@ -147,7 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           prefixIcon: SvgPicture.asset(AppIcons.pinChnageIcon),
                           suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
                           onTap: (){
-                            Get.toNamed(AppRoutes.setAccessPinScreen);
+
                           },
                           title: 'Change Access PIN Settings'),
                       CustomListTile(

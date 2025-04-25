@@ -94,7 +94,7 @@ class _SignInScreenState extends State<SignInScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("${AppStrings.doNotHaveAccount.tr}"),
+                  Text("Don’t Have An Account ?"),
                   TextButton(
                       onPressed: () {
                         Get.toNamed(AppRoutes.signUpScreen);

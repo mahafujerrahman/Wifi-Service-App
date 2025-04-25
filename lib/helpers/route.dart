@@ -37,20 +37,9 @@ class AppRoutes{
   static String resetPasswordScreen = "/resetPasswordScreen";
   static String personalInformationScreen = "/personalInformationScreen";
   static String editPersonalInformationScreen = "/editPersonalInformationScreen";
-  static String setAccessPinScreen = "/setAccessPinScreen";
-  static String removeAccessPinScreen = "/removeAccessPinScreen";
+
   static String helpScreen = "/help_screen";
-  static String confirmAccessPinScreen = "/confirmAccessPinScreen";
-  static String newAccessPinScreen = "/newAccessPinScreen";
-  static String oldAccessPinScreen = "/oldAccessPinScreen";
-  static String personalizeScreen = "/personalizeScreen";
-  static String personalizeQuestionScreenOne = "/personalizeQuestion_screen_one";
-  static String personalizeQuestionScreenTwo = "/personalizeQuestion_screen_two";
-  static String personalizeQuestionScreenThree = "/personalizeQuestionScreenThree";
-  static String personalizeQuestionScreenFour = "/PersonalizeQuestionScreenFour";
-  static String personalizeQuestionScreenFive = "/personalizeQuestionScreenFive";
-  static String periodLengthScreen = "/periodLengthScreen";
-  static String menstrualCycleScreen = "/menstrualCycleScreen";
+
 
 
 

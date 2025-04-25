@@ -72,22 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (isConnection) {
         print("------------------Internet available");
         Timer(const Duration(seconds: 4), () async {
-          bool? isLogged = await PrefsHelper.getBool(AppConstants.isLogged);
-          var role = await PrefsHelper.getString(AppConstants.role);
-          //String token = await PrefsHelper.getString(AppConstants.bearerToken);
-
-          ///========================Check islogged in, token, and role then decide where will be navigate====================>
-
-       /*   if (isLogged != null && isLogged) {
-              if (role == Role.projectManager.name) {
-                Get.offAllNamed(AppRoutes.managerHomeScreen);
-              }
-              if (role == Role.projectSupervisor.name) {
-                Get.offAllNamed(AppRoutes.splashScreen);
-              }
-          } */ {
             Get.offAllNamed(AppRoutes.onboardingScreen);
-          }
         });
       }
 
