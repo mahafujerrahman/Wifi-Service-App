@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../utils/app_colors.dart';
+import 'package:wifi_service_app/utils/app_colors.dart';
 import 'custom_text.dart';
 
 class CustomListTile extends StatelessWidget {
@@ -22,17 +22,26 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: ListTile(
-        leading: prefixIcon,
-        trailing: suffixIcon,
-        horizontalTitleGap: 12.w,
-        dense: true,
-        title: CustomText(
-          textAlign: TextAlign.left,
-          text: title,
-          maxLine: 2,
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w500,
+      child:  Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: borderColor ?? AppColors.colorF7D6D1,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        child: ListTile(
+          leading: prefixIcon,
+          trailing: suffixIcon,
+          horizontalTitleGap: 12.w,
+          dense: true,
+          title: CustomText(
+            textAlign: TextAlign.left,
+            text: title,
+            maxLine: 2,
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );

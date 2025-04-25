@@ -22,6 +22,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  bool isOn = false;
 
 
   @override
@@ -42,13 +43,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(height: 8.h),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text('Mahafujer Rahman', style: AppStyles.fontSize20(fontWeight: FontWeight.w900)),
-                  Text('Status : Disconnected', style: AppStyles.fontSize16(color: AppColors.subTextColor)),
-                  Text('Account type : Free', style: AppStyles.fontSize16(color: AppColors.subTextColor)),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Network Status :', style: AppStyles.fontSize16(color: AppColors.subTextColor)),
+                      SizedBox(width: 8.w),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isOn = !isOn;
+                          });
+                        },
+                        child: Container(
+                          height: 40,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            color: isOn ? Colors.green : AppColors.redColor,
+                            borderRadius: BorderRadius.all(Radius.circular(16)),
+                          ),
+                          child: Center(
+                            child: Text(
+                              isOn ? 'Connected' : 'Disconnected',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
+                  Text('Account Type : Free', style: AppStyles.fontSize16(color: AppColors.subTextColor)),
                 ],
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 50.h),
               Container(
                 decoration: BoxDecoration(
                   color: AppColors.colorF7D6D1,
@@ -70,25 +101,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           prefixIcon: SvgPicture.asset(AppIcons.updateAccountIcon),
                           suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
                           onTap: (){
-                          //  Get.toNamed(AppRoutes.personalInformationScreen);
+                            Get.toNamed(AppRoutes.activePackageDetails);
                           },
-                          title: 'Upgrade Account Type'),
+                          title: 'Active Package Details'),
 
-                      CustomListTile(
-                          prefixIcon: SvgPicture.asset(AppIcons.loveIcon),
-                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
-                          onTap: (){
-                            //Get.toNamed(AppRoutes.personalInformationScreen);
-                          },
-                          title: 'Period and Cycle settings'),
-
-                      CustomListTile(
-                          prefixIcon: SvgPicture.asset(AppIcons.pinChnageIcon),
-                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
-                          onTap: (){
-
-                          },
-                          title: 'Change Access PIN Settings'),
                       CustomListTile(
                           prefixIcon: SvgPicture.asset(AppIcons.passwordIcon),
                           suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
@@ -105,7 +121,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           },
                           title: 'Help'),
                       CustomListTile(
-                          prefixIcon: SvgPicture.asset(AppIcons.logoutIcon),
+                          prefixIcon: Icon(Icons.policy),
+                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
+                          onTap: (){
+                            Get.toNamed(AppRoutes.privacyPolicyScreen);
+                          },
+                          title: 'Privacy and Policy'),
+                      CustomListTile(
+                          prefixIcon: Icon(Icons.comment),
+                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
+                          onTap: (){
+                            Get.toNamed(AppRoutes.contactUsScreen);
+                          },
+                          title: 'Contact Us'),
+                      CustomListTile(
+                          prefixIcon: Icon(Icons.logout,color: Colors.red),
                           onTap: (){
                             _showLogOutBottomSheet(context);
                           },
@@ -157,7 +187,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Text('Are you sure?',
                 style: AppStyles.fontSize18(color: AppColors.primaryColor),
               ),
-              // SizedBox(height: 20.h),
+               SizedBox(height: 20.h),
               Row(
                 children: [
                   Expanded(
@@ -184,17 +214,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () async{
-                       /* await PrefsHelper.remove(AppConstants.isLogged);
-                        await PrefsHelper.remove(AppConstants.bearerToken);
-                        await PrefsHelper.remove(AppConstants.role);
-                        *//*  final socketService = Get.find<UniversalSocketService>();
-                        socketService.disconnect();*//*
-                        //   await PrefsHelper.remove(AppConstants.fcmToken);*/
                         Get.offAllNamed(AppRoutes.signInScreen);
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(double.infinity, 58),
-                        backgroundColor: AppColors.primaryColor,
+                        backgroundColor: AppColors.redColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100.r),
                         ),

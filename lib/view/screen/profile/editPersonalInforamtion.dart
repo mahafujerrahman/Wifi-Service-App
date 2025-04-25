@@ -27,7 +27,6 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
   TextEditingController nameCTRl = TextEditingController();
   TextEditingController emailCTRl = TextEditingController();
   TextEditingController phoneCTRl = TextEditingController();
-  TextEditingController birthdayCTRl = TextEditingController();
   TextEditingController addressCTRl = TextEditingController();
   Uint8List? _image;
   File? selectedImage;
@@ -58,7 +57,7 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
                 Container(
                   height :102.h,
                   decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
+                      color: AppColors.colorF7D6D1,
                       borderRadius: BorderRadius.all(Radius.circular(8.r))
                   ),
                   child: Row(
@@ -113,17 +112,11 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CustomText(text: 'Mahafujer Rahman',color: Colors.white,fontSize:24.sp ,),
-                            CustomText(text: 'rahman@gmail.com',color: Colors.white,fontSize:14.sp),
+                            CustomText(text: 'Mahafujer Rahman',color: Colors.black,fontSize:24.sp ,),
+                            CustomText(text: 'rahman@gmail.com',color: Colors.black,fontSize:14.sp),
                           ],
                         ),
                       ),
-                      InkWell(
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset(AppIcons.eyeOffIcon)
-                        ),
-                      )
                     ],
                   ),
                 ),
@@ -132,14 +125,14 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
                 CustomTextField(
                   controller: nameCTRl,
                   hintText: 'Enter Name',
-                  prefixIcon: SvgPicture.asset(AppIcons.profileIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
+                  prefixIcon: Icon(Icons.person),
                 ),
                 SizedBox(height: 16.h),
                 //============================> Chat History List Tile <=================
                 CustomTextField(
                   controller: emailCTRl,
                   hintText:  'Enter Email',
-                  prefixIcon: SvgPicture.asset(AppIcons.gmail,color: AppColors.borderColor,height: 20.h,width: 20.w),
+                  prefixIcon: Icon(Icons.email),
                 ),
                 SizedBox(height: 16.h),
 
@@ -147,21 +140,15 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
                 CustomTextField(
                   controller: phoneCTRl,
                   hintText: 'Enter Phone Number',
-                  prefixIcon: SvgPicture.asset(AppIcons.eyeOffIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
+                  prefixIcon:  Icon(Icons.phone),
                 ),
-                SizedBox(height: 16.h),
-                //============================> BirthDay List Tile <=================
-                CustomTextField(
-                  controller: birthdayCTRl,
-                  hintText: 'Enter Birthday',
-                  prefixIcon: SvgPicture.asset(AppIcons.eyeOffIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
-                ),
+
                 SizedBox(height: 16.h),
                 //============================> Address List Tile <=================
                 CustomTextField(
                   controller: addressCTRl,
                   hintText: 'Enter Address',
-                  prefixIcon: SvgPicture.asset(AppIcons.eyeOffIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
+                  prefixIcon: Icon(Icons.location_city),
                 ),
 
                 SizedBox(height: 50.h),
