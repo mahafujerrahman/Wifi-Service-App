@@ -41,13 +41,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       border: Border.all(width: 1.w, color: AppColors.primaryColor),
                     ),
                     child: Padding(
-                      padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 3.h),
-                      child: CustomText(
-                        text: 'Skip',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
-                        color: AppColors.primaryColor,
+                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 3.h),
+                      child: InkWell(
+                        onTap: (){
+                          Get.toNamed(AppRoutes.signInScreen);
+                        },
+                        child: CustomText(
+                          text: 'Skip',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16.sp,
+                          color: AppColors.primaryColor,
+                        ),
                       ),
                     ),
                   ),

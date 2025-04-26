@@ -74,7 +74,7 @@ class _ActivePackageDetailsState extends State<ActivePackageDetails> {
                 itemBuilder: (context, index) {
                   return PackageCard(
                     planName: 'Plan ${index + 1}',
-                    data: '${50 * (index + 1)}GB',
+                    data: '${100 * (index + 1)} Mbps',
                     validity: '30 Days',
                     price: 'BDT ${10000 + (index * 5000)}',
                     onPressed: () {
