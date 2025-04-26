@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppColors.secondColor,
       bottomNavigationBar: UserBottomMenu(0),
       appBar: AppBar(
+        backgroundColor: AppColors.secondColor,
         title: Text(
           'Home',
           style: AppStyles.fontSize16(fontWeight: FontWeight.w600),

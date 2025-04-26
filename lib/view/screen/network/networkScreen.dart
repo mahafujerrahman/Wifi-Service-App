@@ -43,6 +43,7 @@ class _NetworkScreenState extends State<NetworkScreen> {
       backgroundColor: AppColors.secondColor,
       bottomNavigationBar: UserBottomMenu(2),
       appBar: AppBar(
+        backgroundColor: AppColors.secondColor,
         title: Text(
           'Network',
           style: AppStyles.fontSize16(fontWeight: FontWeight.w600),
