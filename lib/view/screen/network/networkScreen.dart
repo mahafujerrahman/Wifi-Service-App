@@ -36,42 +36,11 @@ class _NetworkScreenState extends State<NetworkScreen> {
     });
   }
 
-  Widget _buildSpeedTile({required IconData icon, required String title, required String value}) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      margin: EdgeInsets.only(bottom: 12.h),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.r),
-        color: AppColors.primaryColor.withOpacity(0.05),
-        border: Border.all(color: AppColors.primaryColor.withOpacity(0.3)),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, color: AppColors.primaryColor, size: 28.w),
-          SizedBox(width: 16.w),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: AppStyles.fontSize14(fontWeight: FontWeight.w500),
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                value,
-                style: AppStyles.fontSize18(fontWeight: FontWeight.bold, color: AppColors.primaryColor),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.secondColor,
       bottomNavigationBar: UserBottomMenu(2),
       appBar: AppBar(
         title: Text(
@@ -153,6 +122,37 @@ class _NetworkScreenState extends State<NetworkScreen> {
             ],
           ),
         ),
+      ),
+    );
+  }
+  Widget _buildSpeedTile({required IconData icon, required String title, required String value}) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      margin: EdgeInsets.only(bottom: 12.h),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.r),
+        color: AppColors.primaryColor.withOpacity(0.05),
+        border: Border.all(color: AppColors.primaryColor.withOpacity(0.3)),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, color: AppColors.primaryColor, size: 28.w),
+          SizedBox(width: 16.w),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: AppStyles.fontSize14(fontWeight: FontWeight.w500),
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                value,
+                style: AppStyles.fontSize18(fontWeight: FontWeight.bold, color: AppColors.primaryColor),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
