@@ -17,24 +17,35 @@ class UsageScreen extends StatefulWidget {
 }
 
 class _UsageScreenState extends State<UsageScreen> {
-  final ValueNotifier<bool> isMonthly = ValueNotifier<bool>(true);
+  final ValueNotifier<bool> isDaily = ValueNotifier<bool>(true);
 
-  final List<OrdinalData> ordinalList = [
-    OrdinalData(domain: 'Jan', measure: 3),
-    OrdinalData(domain: 'Feb', measure: 5),
-    OrdinalData(domain: 'Mar', measure: 9),
-    OrdinalData(domain: 'Apr', measure: 6.5),
-    OrdinalData(domain: 'May', measure: 5.5),
+  final List<OrdinalData> dailyData = [
+    OrdinalData(domain: 'Fri', measure: 700),
+    OrdinalData(domain: 'Sat', measure: 350),
+    OrdinalData(domain: 'Sun', measure: 600),
+    OrdinalData(domain: 'Mon', measure: 450),
+    OrdinalData(domain: 'Tue', measure: 310),
+    OrdinalData(domain: 'Wed', measure: 350),
+    OrdinalData(domain: 'Thu', measure: 500),
+  ];
+
+  final List<OrdinalData> monthlyData = [
+    OrdinalData(domain: '1', measure: 550),
+    OrdinalData(domain: '2', measure: 120),
+    OrdinalData(domain: '3', measure: 780),
+    OrdinalData(domain: '4', measure: 200),
+    OrdinalData(domain: '5', measure: 550),
+    OrdinalData(domain: '6', measure: 670),
+    OrdinalData(domain: '7', measure: 300),
+    OrdinalData(domain: '8', measure: 720),
+    OrdinalData(domain: '9', measure: 350),
+    OrdinalData(domain: '10', measure: 400),
+    OrdinalData(domain: '11', measure: 420),
+    OrdinalData(domain: '12', measure: 450),
   ];
 
   @override
   Widget build(BuildContext context) {
-    final ordinalGroup = [
-      OrdinalGroup(id: '1', chartType: ChartType.bar, data: ordinalList,color: AppColors.popUpColor),
-      OrdinalGroup(id: '2', chartType: ChartType.line, data: ordinalList),
-      OrdinalGroup(id: '3', chartType: ChartType.scatterPlot, data: ordinalList),
-    ];
-
     return Scaffold(
       backgroundColor: AppColors.secondColor,
       bottomNavigationBar: UserBottomMenu(1),
@@ -60,7 +71,7 @@ class _UsageScreenState extends State<UsageScreen> {
               ),
               child: Center(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2.h),
+                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
                   child: Row(
                     children: [
                       Icon(Icons.analytics_outlined),
@@ -83,72 +94,67 @@ class _UsageScreenState extends State<UsageScreen> {
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding:  EdgeInsets.all(8.r),
+                  padding: EdgeInsets.all(8.r),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        height: 60.h,
-                        decoration: BoxDecoration(
-                          color: AppColors.primaryColor,
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: () => isMonthly.value = true,
-                                child: ValueListenableBuilder<bool>(
-                                  valueListenable: isMonthly,
-                                  builder: (context, value, _) {
-                                    return Container(
+                      ValueListenableBuilder<bool>(
+                        valueListenable: isDaily,
+                        builder: (context, isDailySelected, _) {
+                          return Container(
+                            height: 60.h,
+                            decoration: BoxDecoration(
+                              color: AppColors.primaryColor,
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () => isDaily.value = true,
+                                    child: Container(
                                       decoration: BoxDecoration(
-                                        color: value ? AppColors.secondatyColor : Colors.transparent,
+                                        color: isDailySelected ? AppColors.secondatyColor : Colors.transparent,
                                         borderRadius: BorderRadius.circular(8.r),
                                       ),
                                       alignment: Alignment.center,
                                       child: Text(
                                         'Daily',
                                         style: TextStyle(
-                                          color: value ? Colors.white : Colors.blue,
-                                          fontSize: 14,
+                                          color: isDailySelected ? Colors.white : Colors.blue,
+                                          fontSize: 14.sp,
                                         ),
                                       ),
-                                    );
-                                  },
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: () => isMonthly.value = false,
-                                child: ValueListenableBuilder<bool>(
-                                  valueListenable: isMonthly,
-                                  builder: (context, value, _) {
-                                    return Container(
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () => isDaily.value = false,
+                                    child: Container(
                                       decoration: BoxDecoration(
-                                        color: !value ? AppColors.secondatyColor : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(8),
+                                        color: !isDailySelected ? AppColors.secondatyColor : Colors.transparent,
+                                        borderRadius: BorderRadius.circular(8.r),
                                       ),
                                       alignment: Alignment.center,
                                       child: Text(
                                         'Monthly',
                                         style: TextStyle(
-                                          color: !value ? Colors.white : Colors.blue,
-                                          fontSize: 14,
+                                          color: !isDailySelected ? Colors.white : Colors.blue,
+                                          fontSize: 14.sp,
                                         ),
                                       ),
-                                    );
-                                  },
+                                    ),
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
-                          ],
-                        ),
+                          );
+                        },
                       ),
                       SizedBox(height: 25.h),
                       Padding(
-                        padding:  EdgeInsets.all(16.r),
+                        padding: EdgeInsets.all(16.r),
                         child: Container(
                           height: 450.h,
                           decoration: BoxDecoration(
@@ -156,37 +162,59 @@ class _UsageScreenState extends State<UsageScreen> {
                           ),
                           child: AspectRatio(
                             aspectRatio: 16 / 9,
-                            child: DChartComboO(
-                              groupList: ordinalGroup,
-                              domainAxis: DomainAxis(),
-                              measureAxis: MeasureAxis(
-                                showLine: true,
-                                lineStyle: LineStyle(color: Colors.black),
-                                labelStyle: LabelStyle(
-                                  fontSize: 8,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                                gapAxisToLabel: 8,
-                                labelAnchor: LabelAnchor.centered,
-                                tickLength: 5,
-                                tickLabelFormatter: (value) {
-                                  if (value == null) return '';
+                            child: ValueListenableBuilder<bool>(
+                              valueListenable: isDaily,
+                              builder: (context, isDailySelected, _) {
+                                final groupList = [
+                                  OrdinalGroup(
+                                    id: '1',
+                                    chartType: ChartType.bar,
+                                    data: isDailySelected ? dailyData : monthlyData,
+                                    color: AppColors.popUpColor,
+                                  ),
+                                  OrdinalGroup(
+                                    id: '2',
+                                    chartType: ChartType.line,
+                                    data: isDailySelected ? dailyData : monthlyData,
+                                  ),
+                                  OrdinalGroup(
+                                    id: '3',
+                                    chartType: ChartType.scatterPlot,
+                                    data: isDailySelected ? dailyData : monthlyData,
+                                  ),
+                                ];
+                                return DChartComboO(
+                                  groupList: groupList,
+                                  domainAxis: DomainAxis(),
+                                  measureAxis: MeasureAxis(
+                                    showLine: true,
+                                    lineStyle: LineStyle(color: Colors.black),
+                                    labelStyle: LabelStyle(
+                                      fontSize: 8,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                    gapAxisToLabel: 8,
+                                    labelAnchor: LabelAnchor.centered,
+                                    tickLength: 5,
+                                    tickLabelFormatter: (value) {
+                                      if (value == null) return '';
+                                      if (value <= 0) {
+                                        return '0 Mbps';
+                                      } else if (value <= 300) {
+                                        return '300 Mbps';
+                                      } else if (value <= 400) {
+                                        return '400 Mbps';
+                                      } else if (value <= 500) {
+                                        return '500+ Mbps';
+                                      } else {
+                                        return '';
+                                      }
+                                    },
 
-                                  if (value <= 0) {
-                                    return '0 Mbps';
-                                  } else if (value <= 100) {
-                                    return '100 Mbps';
-                                  } else if (value <= 200) {
-                                    return '200 Mbps';
-                                  } else if (value <= 300) {
-                                    return '300 Mbps';
-                                  } else {
-                                    return ''; // hide other values if you want
-                                  }
-                                },
-                              ),
-
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ),
