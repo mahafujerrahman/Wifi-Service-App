@@ -122,7 +122,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           borderRadius: BorderRadius.circular(16.r),
           borderSide: BorderSide(
             width: 1.w,
-            color: AppColors.borderColor,
+            color: AppColors.colorF7D6D1,
           ),
         ),
         errorBorder: _buildOutlineInputBorder(),
@@ -137,7 +137,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: EdgeInsets.only(right: 15.w),
       child: SvgPicture.asset(
-        color: AppColors.iconGrayColor,
+        color: AppColors.colorF7D6D1,
         icon,
       ),
     );
@@ -148,7 +148,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       borderRadius: BorderRadius.circular(12.r),
       borderSide: BorderSide(
         width: 1.w,
-        color: AppColors.borderColor,
+        color: AppColors.colorF7D6D1,
       ),
     );
   }

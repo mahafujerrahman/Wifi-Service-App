@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:wifi_service_app/base/custom_list_tile.dart';
 import 'package:wifi_service_app/base/custom_text.dart';
 import 'package:wifi_service_app/helpers/route.dart';
 import 'package:wifi_service_app/utils/app_colors.dart';
-import 'package:wifi_service_app/utils/app_icons.dart';
-import 'package:wifi_service_app/utils/app_strings.dart';
 import 'package:wifi_service_app/utils/style.dart';
 import 'package:wifi_service_app/view/screen/bottomMenuBar/user_bottom_menu..dart';
 
@@ -43,7 +40,7 @@ class PersonalInformationScreen extends StatelessWidget {
                     Container(
                       height :102.h,
                       decoration: BoxDecoration(
-                          color: AppColors.primaryColor,
+                          color: AppColors.colorF7D6D1,
                           borderRadius: BorderRadius.all(Radius.circular(8.r))
                       ),
                       child: Row(
@@ -52,7 +49,7 @@ class PersonalInformationScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              width: 80,
+                              width: 80.w,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(8)), // Removed .r for simplicity
                               ),
@@ -68,8 +65,8 @@ class PersonalInformationScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                CustomText(text: 'rahman munna',color: Colors.white,fontSize:24.sp ,),
-                                CustomText(text: 'rahmanmunna@gmail.com',color: Colors.white,fontSize:14.sp),
+                                CustomText(text: 'rahman munna',color: Colors.black,fontSize:24.sp ,),
+                                CustomText(text: 'rahmanmunna@gmail.com',color: Colors.black,fontSize:14.sp),
                               ],
                             ),
                           ),
@@ -79,7 +76,7 @@ class PersonalInformationScreen extends StatelessWidget {
                             },
                             child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: SvgPicture.asset(AppIcons.eyeOffIcon)
+                                child: Icon(Icons.edit)
                             ),
                           )
                         ],
@@ -90,13 +87,13 @@ class PersonalInformationScreen extends StatelessWidget {
                     //============================> PersonalInfo List Tile <=================
                     CustomListTile(
                       title:'Mahafujer Rahman',
-                      prefixIcon: SvgPicture.asset(AppIcons.eyeIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
+                      prefixIcon: Icon(Icons.person),
                     ),
                     SizedBox(height: 8.h),
                     //============================> Chat History List Tile <=================
                     CustomListTile(
                       title:'mahafujer@gmail.com',
-                      prefixIcon: SvgPicture.asset(AppIcons.eyeOffIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
+                      prefixIcon: Icon(Icons.email),
                     ),
                     SizedBox(height: 8.h),
                     //============================> Settings List Tile <=================
@@ -105,19 +102,13 @@ class PersonalInformationScreen extends StatelessWidget {
                         //  Get.toNamed(AppRoutes.forgotPasswordScreen);
                       },
                       title:'+0175588888888',
-                      prefixIcon: SvgPicture.asset(AppIcons.profileIcon,color: AppColors.borderColor,height: 20.h,width: 20.w),
-                    ),
-                    SizedBox(height: 8.h),
-                    //============================> Birth day List Tile <=================
-                    CustomListTile(
-                      title:'12 July 1998',
-                      prefixIcon: SvgPicture.asset(AppIcons.profileIcon,height: 20.h,width: 20.w),
+                      prefixIcon: Icon(Icons.phone),
                     ),
                     SizedBox(height: 8.h),
                     //============================> Address List Tile <=================
                     CustomListTile(
                       title:'Dhaka Bangladesh',
-                      prefixIcon: SvgPicture.asset(AppIcons.profileIcon,height: 20.h,width: 20.w),
+                      prefixIcon:  Icon(Icons.location_city),
                     )
                   ]
               ),

@@ -12,9 +12,12 @@ import 'package:wifi_service_app/view/screen/auth/signUpEmailVerify.dart';
 import 'package:wifi_service_app/view/screen/auth/signUpScreen.dart';
 import 'package:wifi_service_app/view/screen/home/homeScreen.dart';
 import 'package:wifi_service_app/view/screen/network/networkScreen.dart';
+import 'package:wifi_service_app/view/screen/profile/contactUs/contactUs_screen.dart';
 import 'package:wifi_service_app/view/screen/profile/editPersonalInforamtion.dart';
 import 'package:wifi_service_app/view/screen/profile/help/helpScreen.dart';
+import 'package:wifi_service_app/view/screen/profile/package/active_package_screen.dart';
 import 'package:wifi_service_app/view/screen/profile/personalInformationScreen.dart';
+import 'package:wifi_service_app/view/screen/profile/privacyPolicy/privacy_policy_screen.dart';
 import 'package:wifi_service_app/view/screen/profile/profileScreen.dart';
 import 'package:wifi_service_app/view/screen/usage/usageScreen.dart';
 
@@ -39,6 +42,9 @@ class AppRoutes{
   static String editPersonalInformationScreen = "/editPersonalInformationScreen";
 
   static String helpScreen = "/help_screen";
+  static String contactUsScreen = "/contactUsScreen";
+  static String privacyPolicyScreen = "/privacyPolicyScreen";
+  static String activePackageDetails = "/activePackageDetails";
 
 
 
@@ -72,6 +78,9 @@ class AppRoutes{
    GetPage(name:personalInformationScreen, page: ()=> PersonalInformationScreen(),transition: Transition.noTransition),
    GetPage(name:editPersonalInformationScreen, page: ()=> EditPersonalInformationScreen(),transition: Transition.noTransition),
    GetPage(name:helpScreen, page: ()=> HelpScreen(),transition: Transition.noTransition),
+   GetPage(name:contactUsScreen, page: ()=> ContactUsScreen(),transition: Transition.noTransition),
+   GetPage(name:privacyPolicyScreen, page: ()=> PrivacyPolicyScreen(),transition: Transition.noTransition),
+   GetPage(name:activePackageDetails, page: ()=> ActivePackageDetails(),transition: Transition.noTransition),
 
 
 
