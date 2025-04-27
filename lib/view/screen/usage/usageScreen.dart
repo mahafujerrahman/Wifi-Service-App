@@ -44,6 +44,7 @@ class _UsageScreenState extends State<UsageScreen> {
     OrdinalData(domain: '12', measure: 450),
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
