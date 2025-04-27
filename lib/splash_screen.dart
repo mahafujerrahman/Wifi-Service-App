@@ -1,14 +1,9 @@
 import 'dart:async';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:wifi_service_app/helpers/prefs_helpers.dart';
 import 'package:wifi_service_app/helpers/route.dart';
 import 'package:wifi_service_app/utils/app_colors.dart';
-import 'package:wifi_service_app/utils/app_constants.dart';
 import 'package:wifi_service_app/utils/app_images.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,68 +14,45 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
   void initState() {
     super.initState();
-    StreamSubscription;
-     getConnectivity();
+    startSplashTimer();
   }
-  @override
-  void dispose() {
-    streamSubscription?.cancel();
-    super.dispose();
+
+  void startSplashTimer() {
+    Timer(const Duration(seconds: 3), () {
+      Get.offAllNamed(AppRoutes.onboardingScreen);
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(height: 200.h),
-                Container(
-                  height: 300.h,
-                  width: 345.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(24.r)),
-                  ),
-                  child:    Image.asset(AppImages.appLogo, width: 357.w, height: 357.h),
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 300.h,
+                width: 345.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(24.r)),
                 ),
-                SizedBox(height: 20.h),
-              ],
-            ),
+                child: Image.asset(
+                  AppImages.appLogo,
+                  width: 357.w,
+                  height: 357.h,
+                ),
+              ),
+              SizedBox(height: 20.h),
+            ],
           ),
         ),
       ),
     );
-  }
-
-  ///===================internet connection checker==================>
-  StreamSubscription? streamSubscription;
-  bool isConnection = false;
-
-  ///========================is internet connection check========================>
-  void getConnectivity() async {
-    streamSubscription = Connectivity().onConnectivityChanged.listen((event) async {
-      isConnection = await InternetConnectionChecker.instance.hasConnection;
-
-      ///==================if internet is available===================>
-      if (isConnection) {
-        print("------------------Internet available");
-        Timer(const Duration(seconds: 4), () async {
-            Get.offAllNamed(AppRoutes.onboardingScreen);
-        });
-      }
-
-      ///======================no internet=========================>
-      else {
-        Get.snackbar("No Internet", 'Connect you device with internet');
-        print("----------------------No internet");
-      }
-    });
   }
 }
