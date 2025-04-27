@@ -26,57 +26,47 @@ class PackageCard extends StatelessWidget {
       height: 200.h,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
-            blurRadius: 8,
-            offset: Offset(0, 4),
+            blurRadius: 8.r,
+            offset: Offset(0, 4.h),
           ),
         ],
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(
-              color: Colors.grey[200],
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text(
-              planName,
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.black87,
+          Padding(
+            padding: EdgeInsets.all(8.r),
+            child: Container(
+              padding:  EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Text(
+                planName,
+                style: AppStyles.fontSize12(color: AppColors.blackColor)
               ),
             ),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Text(
             data,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
+            style: AppStyles.fontSize24(fontWeight: FontWeight.bold,color: AppColors.blackColor),
           ),
-          const SizedBox(height: 4),
+           SizedBox(height: 4.h),
           Text(
             validity,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey,
-            ),
+            style: AppStyles.fontSize14(color: AppColors.greyColor),
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Text(
             price,
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.red,
-              fontWeight: FontWeight.bold,
-            ),
+            style: AppStyles.fontSize16(fontWeight: FontWeight.bold,color: AppColors.redColor),
           ),
            SizedBox(height: 8.h),
           ElevatedButton(

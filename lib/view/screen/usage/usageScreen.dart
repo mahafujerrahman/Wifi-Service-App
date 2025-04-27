@@ -108,7 +108,7 @@ class _UsageScreenState extends State<UsageScreen> {
                                       ),
                                       alignment: Alignment.center,
                                       child: Text(
-                                        'Month',
+                                        'Daily',
                                         style: TextStyle(
                                           color: value ? Colors.white : Colors.blue,
                                           fontSize: 14,
@@ -132,7 +132,7 @@ class _UsageScreenState extends State<UsageScreen> {
                                       ),
                                       alignment: Alignment.center,
                                       child: Text(
-                                        'Year',
+                                        'Monthly',
                                         style: TextStyle(
                                           color: !value ? Colors.white : Colors.blue,
                                           fontSize: 14,

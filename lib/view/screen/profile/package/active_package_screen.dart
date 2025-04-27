@@ -33,13 +33,14 @@ class _ActivePackageDetailsState extends State<ActivePackageDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                width: double.infinity,
                 height: 102.h,
                 decoration: BoxDecoration(
                   color: AppColors.colorF7D6D1,
                   borderRadius: BorderRadius.all(Radius.circular(8.r)),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.r),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -47,9 +48,18 @@ class _ActivePackageDetailsState extends State<ActivePackageDetails> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Active Package : Plan 1', style: AppStyles.fontSize24(color: AppColors.blackColor,fontWeight: FontWeight.bold)),
+                          Text(
+                            'Active Package : Plan 1',
+                            style: AppStyles.fontSize24(
+                                color: AppColors.blackColor,
+                                fontWeight: FontWeight.bold),
+                          ),
                           SizedBox(height: 4.h),
-                          Text('Validation : July 30, 2025', style: AppStyles.fontSize16(color: AppColors.blackColor)),
+                          Text(
+                            'Validation : July 30, 2025',
+                            style: AppStyles.fontSize16(
+                                color: AppColors.blackColor),
+                          ),
                           SizedBox(height: 4.h),
                         ],
                       ),
@@ -58,27 +68,48 @@ class _ActivePackageDetailsState extends State<ActivePackageDetails> {
                 ),
               ),
               SizedBox(height: 20.h),
-              Text('Other Packages', style: AppStyles.fontSize16(color: AppColors.blackColor,fontWeight: FontWeight.bold)),
+              Text(
+                'Other Packages',
+                style: AppStyles.fontSize16(
+                    color: AppColors.blackColor, fontWeight: FontWeight.bold),
+              ),
               SizedBox(height: 10.h),
 
-              GridView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: 10,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 12.w,
-                  mainAxisSpacing: 12.h,
-                  childAspectRatio: 1, // square shaped
-                ),
-                itemBuilder: (context, index) {
-                  return PackageCard(
-                    planName: 'Plan ${index + 1}',
-                    data: '${100 * (index + 1)} Mbps',
-                    validity: '30 Days',
-                    price: 'BDT ${10000 + (index * 5000)}',
-                    onPressed: () {
-                      // Handle tap
+              /// 🛠 Responsive GridView here
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  double screenWidth = constraints.maxWidth;
+                  int crossAxisCount = 2;
+
+                  if (screenWidth >= 600) {
+                    crossAxisCount = 3; // Tablet
+                  } else if (screenWidth >= 900) {
+                    crossAxisCount = 4; // Large Tablet / Web
+                  }
+
+                  double itemWidth = (screenWidth - (crossAxisCount - 1) * 12.w) / crossAxisCount;
+                  double itemHeight = 220.h; // PackageCard height approx
+
+                  return GridView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: 10,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: crossAxisCount,
+                      crossAxisSpacing: 12.w,
+                      mainAxisSpacing: 12.h,
+                      childAspectRatio: itemWidth / itemHeight, // 🔥 Dynamically responsive
+                    ),
+                    itemBuilder: (context, index) {
+                      return PackageCard(
+                        planName: 'Plan ${index + 1}',
+                        data: '${100 * (index + 1)} Mbps',
+                        validity: '30 Days',
+                        price: 'BDT ${10000 + (index * 5000)}',
+                        onPressed: () {
+                          // Handle button tap
+                        },
+                      );
                     },
                   );
                 },
