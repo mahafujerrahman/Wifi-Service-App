@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
 
   final Map<String, Map<String, String>> languages;
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ThemeController>(builder: (themeController) {
