@@ -67,7 +67,7 @@ class _UsageScreenState extends State<UsageScreen> {
             Container(
               height: 28.h,
               decoration: BoxDecoration(
-                color: AppColors.colorF7D6D1,
+                color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(8.h),
               ),
               child: Center(
@@ -75,12 +75,12 @@ class _UsageScreenState extends State<UsageScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
                   child: Row(
                     children: [
-                      Icon(Icons.analytics_outlined),
+                      Icon(Icons.analytics_outlined,color: AppColors.secondColor),
                       SizedBox(width: 4.w),
                       Expanded(
                         child: Text(
                           'Check your bandwidth usage summary at a glance.',
-                          style: AppStyles.fontSize14(),
+                          style: AppStyles.fontSize14(color: AppColors.secondColor),
                         ),
                       ),
                     ],
@@ -92,7 +92,20 @@ class _UsageScreenState extends State<UsageScreen> {
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               child: Divider(thickness: .5),
             ),
-            Expanded(
+           
+           Center(
+             child: Column(
+               children: [
+                 Text('Hello'),
+                 Text('Hello'),
+                 Text('Hello'),
+                 Text('Hello'),
+                 Text('Hello'),
+                 Text('Hello'),
+               ],
+             ),
+           )
+           /* Expanded(
               child: SingleChildScrollView(
                 child: Padding(
                   padding: EdgeInsets.all(8.r),
@@ -224,7 +237,7 @@ class _UsageScreenState extends State<UsageScreen> {
                   ),
                 ),
               ),
-            ),
+            ),*/
           ],
         ),
       ),
