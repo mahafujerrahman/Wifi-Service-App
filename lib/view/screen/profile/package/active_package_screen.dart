@@ -36,7 +36,7 @@ class _ActivePackageDetailsState extends State<ActivePackageDetails> {
                 width: double.infinity,
                 height: 102.h,
                 decoration: BoxDecoration(
-                  color: AppColors.colorF7D6D1,
+                  color: AppColors.secondColor,
                   borderRadius: BorderRadius.all(Radius.circular(8.r)),
                 ),
                 child: Padding(
