@@ -40,7 +40,7 @@ class PersonalInformationScreen extends StatelessWidget {
                     Container(
                       height :102.h,
                       decoration: BoxDecoration(
-                          color: AppColors.colorF7D6D1,
+                          color: AppColors.primaryColor,
                           borderRadius: BorderRadius.all(Radius.circular(8.r))
                       ),
                       child: Row(

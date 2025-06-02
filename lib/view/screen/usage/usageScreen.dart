@@ -122,7 +122,7 @@ class _UsageScreenState extends State<UsageScreen> {
                                       child: Text(
                                         'Daily',
                                         style: TextStyle(
-                                          color: isDailySelected ? Colors.white : Colors.blue,
+                                          color: isDailySelected ? Colors.white : Colors.black,
                                           fontSize: 14.sp,
                                         ),
                                       ),
@@ -141,7 +141,7 @@ class _UsageScreenState extends State<UsageScreen> {
                                       child: Text(
                                         'Monthly',
                                         style: TextStyle(
-                                          color: !isDailySelected ? Colors.white : Colors.blue,
+                                          color: !isDailySelected ? Colors.white : Colors.black,
                                           fontSize: 14.sp,
                                         ),
                                       ),
