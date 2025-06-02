@@ -84,68 +84,65 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
               SizedBox(height: 50.h),
-              Container(
-                decoration: BoxDecoration(
-                  color: AppColors.colorF7D6D1,
-                  borderRadius: BorderRadius.all(Radius.circular(16.r)),
-                ),
-                width: double.infinity,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.h),
-                  child: Column(
-                    children: [
-                      CustomListTile(
-                        prefixIcon: SvgPicture.asset(AppIcons.personalInfoIcon),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.h,vertical: 4.w),
+                child: Column(
+                  children: [
+                    CustomListTile(
+                      prefixIcon: SvgPicture.asset(AppIcons.personalInfoIcon),
+                      suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
+                      onTap: (){
+                        Get.toNamed(AppRoutes.personalInformationScreen);
+                      },
+                      title: 'Personal Information'),
+                    SizedBox(height: 4.h),
+                    CustomListTile(
+                        prefixIcon: SvgPicture.asset(AppIcons.updateAccountIcon),
                         suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
                         onTap: (){
-                          Get.toNamed(AppRoutes.personalInformationScreen);
+                          Get.toNamed(AppRoutes.activePackageDetails);
                         },
-                        title: 'Personal Information'),
-                      CustomListTile(
-                          prefixIcon: SvgPicture.asset(AppIcons.updateAccountIcon),
-                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
-                          onTap: (){
-                            Get.toNamed(AppRoutes.activePackageDetails);
-                          },
-                          title: 'Active Package Details'),
-
-                      CustomListTile(
-                          prefixIcon: SvgPicture.asset(AppIcons.passwordIcon),
-                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
-                          onTap: (){
-                            Get.toNamed(AppRoutes.resetPasswordScreen);
-                          },
-                          title: 'Change Password'),
-
-                      CustomListTile(
-                          prefixIcon: SvgPicture.asset(AppIcons.helpIcon),
-                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
-                          onTap: (){
-                            Get.toNamed(AppRoutes.helpScreen);
-                          },
-                          title: 'Help'),
-                      CustomListTile(
-                          prefixIcon: Icon(Icons.policy),
-                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
-                          onTap: (){
-                            Get.toNamed(AppRoutes.privacyPolicyScreen);
-                          },
-                          title: 'Privacy and Policy'),
-                      CustomListTile(
-                          prefixIcon: Icon(Icons.comment),
-                          suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
-                          onTap: (){
-                            Get.toNamed(AppRoutes.contactUsScreen);
-                          },
-                          title: 'Contact Us'),
-                      CustomListTile(
-                          prefixIcon: Icon(Icons.logout,color: Colors.red),
-                          onTap: (){
-                            _showLogOutBottomSheet(context);
-                          },
-                          title: 'Log Out'),
-                    ],
-                  ),
+                        title: 'Active Package Details'),
+                    SizedBox(height: 4.h),
+                    CustomListTile(
+                        prefixIcon: SvgPicture.asset(AppIcons.passwordIcon),
+                        suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
+                        onTap: (){
+                          Get.toNamed(AppRoutes.resetPasswordScreen);
+                        },
+                        title: 'Change Password'),
+                    SizedBox(height: 4.h),
+                    CustomListTile(
+                        prefixIcon: SvgPicture.asset(AppIcons.helpIcon),
+                        suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
+                        onTap: (){
+                          Get.toNamed(AppRoutes.helpScreen);
+                        },
+                        title: 'Help'),
+                    SizedBox(height: 4.h),
+                    CustomListTile(
+                        prefixIcon: Icon(Icons.policy),
+                        suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
+                        onTap: (){
+                          Get.toNamed(AppRoutes.privacyPolicyScreen);
+                        },
+                        title: 'Privacy and Policy'),
+                    SizedBox(height: 4.h),
+                    CustomListTile(
+                        prefixIcon: Icon(Icons.comment),
+                        suffixIcon: SvgPicture.asset(AppIcons.listTileArrowIcon),
+                        onTap: (){
+                          Get.toNamed(AppRoutes.contactUsScreen);
+                        },
+                        title: 'Contact Us'),
+                    SizedBox(height: 4.h),
+                    CustomListTile(
+                        prefixIcon: Icon(Icons.logout,color: Colors.red),
+                        onTap: (){
+                          _showLogOutBottomSheet(context);
+                        },
+                        title: 'Log Out'),
+                  ],
                 ),
               )
             ],

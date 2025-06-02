@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               SizedBox(height: 20.h),
 
-              Container(
+             /* Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(16.w),
                 decoration: BoxDecoration(
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text('Expiry: 30th July 2025', style: AppStyles.fontSize14(color: AppColors.subTextColor)),
                   ],
                 ),
-              ),
+              ),*/
 
               SizedBox(height: 20.h),
 
