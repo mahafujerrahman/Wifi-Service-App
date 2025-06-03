@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wifi_service_app/base/custom_text.dart';
 import 'package:wifi_service_app/utils/app_colors.dart';
 import 'package:wifi_service_app/utils/style.dart';
 import 'package:wifi_service_app/view/screen/profile/package/packageCard.dart';
@@ -25,6 +24,9 @@ class _ActivePackageDetailsState extends State<ActivePackageDetails> {
         ),
         centerTitle: true,
       ),
+
+
+
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
@@ -88,17 +90,17 @@ class _ActivePackageDetailsState extends State<ActivePackageDetails> {
                   }
 
                   double itemWidth = (screenWidth - (crossAxisCount - 1) * 12.w) / crossAxisCount;
-                  double itemHeight = 220.h; // PackageCard height approx
+                  double itemHeight = 220.h;
 
                   return GridView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: 10,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: crossAxisCount,
                       crossAxisSpacing: 12.w,
                       mainAxisSpacing: 12.h,
-                      childAspectRatio: itemWidth / itemHeight, // 🔥 Dynamically responsive
+                      childAspectRatio: itemWidth / itemHeight,
                     ),
                     itemBuilder: (context, index) {
                       return PackageCard(
