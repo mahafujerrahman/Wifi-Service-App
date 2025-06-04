@@ -8,8 +8,6 @@ import 'package:wifi_service_app/helpers/route.dart';
 import 'package:wifi_service_app/utils/app_colors.dart';
 import 'package:wifi_service_app/utils/app_images.dart';
 
-
-
 class OnboardingScreen extends StatefulWidget {
    OnboardingScreen({super.key});
 
