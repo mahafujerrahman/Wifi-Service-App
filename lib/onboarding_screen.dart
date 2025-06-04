@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:wifi_service_app/base/custom_button.dart';
 import 'package:wifi_service_app/base/custom_text.dart';
 import 'package:wifi_service_app/helpers/route.dart';
@@ -9,7 +8,7 @@ import 'package:wifi_service_app/utils/app_colors.dart';
 import 'package:wifi_service_app/utils/app_images.dart';
 
 class OnboardingScreen extends StatefulWidget {
-   OnboardingScreen({super.key});
+   const OnboardingScreen({super.key});
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
