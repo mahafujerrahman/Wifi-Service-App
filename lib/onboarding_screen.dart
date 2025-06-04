@@ -28,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: Column(
             children: [
               SizedBox(height: 60.h),
-              //=============================> Skip Button <========================
+              //========================> Skip Button <========================
               Align(
                 alignment: Alignment.topRight,
                 child: GestureDetector(
