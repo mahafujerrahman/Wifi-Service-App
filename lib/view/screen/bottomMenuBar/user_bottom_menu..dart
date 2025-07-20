@@ -40,7 +40,7 @@ class UserBottomMenu extends StatelessWidget {
     ];
 
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.black38,
@@ -51,7 +51,7 @@ class UserBottomMenu extends StatelessWidget {
         ],
       ),
       child: BottomNavigationBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.secondColor,
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: AppColors.white,
         currentIndex: menuIndex,
@@ -75,8 +75,6 @@ class UserBottomMenu extends StatelessWidget {
         items: menuItems,
       ),
     );
-
-
   }
 }
 
