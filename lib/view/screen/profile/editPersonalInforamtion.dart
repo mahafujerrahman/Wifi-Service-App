@@ -35,7 +35,7 @@ class _EditPersonalInformationScreenState extends State<EditPersonalInformationS
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      bottomNavigationBar: const UserBottomMenu(3),
+      bottomNavigationBar: UserBottomMenu(1),
       appBar: AppBar(
         title: Text('Edit Personal Information',
           style: AppStyles.fontSize18(fontWeight: FontWeight.w600),

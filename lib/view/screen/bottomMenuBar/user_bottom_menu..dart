@@ -69,7 +69,6 @@ class UserBottomMenu extends StatelessWidget {
             case 3:
               Get.offAndToNamed(AppRoutes.profileScreen);
               break;
-
           }
         },
         items: menuItems,
