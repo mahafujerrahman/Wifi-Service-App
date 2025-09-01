@@ -19,6 +19,7 @@ void main() async {
   ));
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key, required this.languages});
 
@@ -38,7 +39,6 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 navigatorKey: Get.key,
                 // theme: themeController.darkTheme ? dark(): light(),
-
                 defaultTransition: Transition.topLevel,
                 locale: localizeController.locale,
                 translations: Messages(languages: languages),

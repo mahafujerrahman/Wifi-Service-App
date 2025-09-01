@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wifi_service_app/utils/app_colors.dart';
 import 'package:wifi_service_app/utils/style.dart';
-import 'package:d_chart/ordinal/combo.dart';
-import 'package:d_chart/commons/axis/axis.dart';
 import 'package:d_chart/commons/data_model/data_model.dart';
-import 'package:d_chart/commons/enums.dart';
-import 'package:d_chart/commons/style/style.dart';
 import 'package:wifi_service_app/view/screen/bottomMenuBar/user_bottom_menu..dart';
 
 class UsageScreen extends StatefulWidget {
@@ -67,7 +63,7 @@ class _UsageScreenState extends State<UsageScreen> {
             Container(
               height: 28.h,
               decoration: BoxDecoration(
-                color: AppColors.colorF7D6D1,
+                color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(8.h),
               ),
               child: Center(
@@ -75,12 +71,12 @@ class _UsageScreenState extends State<UsageScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
                   child: Row(
                     children: [
-                      Icon(Icons.analytics_outlined),
+                      Icon(Icons.analytics_outlined,color: AppColors.secondColor),
                       SizedBox(width: 4.w),
                       Expanded(
                         child: Text(
                           'Check your bandwidth usage summary at a glance.',
-                          style: AppStyles.fontSize14(),
+                          style: AppStyles.fontSize14(color: AppColors.secondColor),
                         ),
                       ),
                     ],
@@ -92,7 +88,20 @@ class _UsageScreenState extends State<UsageScreen> {
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               child: Divider(thickness: .5),
             ),
-            Expanded(
+           
+           Center(
+             child: Column(
+               children: [
+                 Text('Hello'),
+                 Text('Hello'),
+                 Text('Hello'),
+                 Text('Hello'),
+                 Text('Hello'),
+                 Text('Hello'),
+               ],
+             ),
+           )
+           /* Expanded(
               child: SingleChildScrollView(
                 child: Padding(
                   padding: EdgeInsets.all(8.r),
@@ -122,7 +131,7 @@ class _UsageScreenState extends State<UsageScreen> {
                                       child: Text(
                                         'Daily',
                                         style: TextStyle(
-                                          color: isDailySelected ? Colors.white : Colors.blue,
+                                          color: isDailySelected ? Colors.white : Colors.black,
                                           fontSize: 14.sp,
                                         ),
                                       ),
@@ -141,7 +150,7 @@ class _UsageScreenState extends State<UsageScreen> {
                                       child: Text(
                                         'Monthly',
                                         style: TextStyle(
-                                          color: !isDailySelected ? Colors.white : Colors.blue,
+                                          color: !isDailySelected ? Colors.white : Colors.black,
                                           fontSize: 14.sp,
                                         ),
                                       ),
@@ -224,7 +233,7 @@ class _UsageScreenState extends State<UsageScreen> {
                   ),
                 ),
               ),
-            ),
+            ),*/
           ],
         ),
       ),

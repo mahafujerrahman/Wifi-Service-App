@@ -26,10 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: UserBottomMenu(0),
       appBar: AppBar(
         backgroundColor: AppColors.secondColor,
-        title: Text(
+       /* title: Text(
           'Home',
           style: AppStyles.fontSize16(fontWeight: FontWeight.w600),
-        ),
+        ),*/
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               SizedBox(height: 20.h),
 
-              Container(
+             /* Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(16.w),
                 decoration: BoxDecoration(
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text('Expiry: 30th July 2025', style: AppStyles.fontSize14(color: AppColors.subTextColor)),
                   ],
                 ),
-              ),
+              ),*/
 
               SizedBox(height: 20.h),
 

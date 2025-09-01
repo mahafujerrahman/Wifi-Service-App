@@ -16,7 +16,7 @@ class PersonalInformationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      bottomNavigationBar: const UserBottomMenu(3),
+      bottomNavigationBar: UserBottomMenu(3),
       appBar: AppBar(
         title: Text('Personal Information',
           style: AppStyles.fontSize18(fontWeight: FontWeight.w600),
@@ -40,7 +40,7 @@ class PersonalInformationScreen extends StatelessWidget {
                     Container(
                       height :102.h,
                       decoration: BoxDecoration(
-                          color: AppColors.colorF7D6D1,
+                          color: AppColors.primaryColor,
                           borderRadius: BorderRadius.all(Radius.circular(8.r))
                       ),
                       child: Row(
